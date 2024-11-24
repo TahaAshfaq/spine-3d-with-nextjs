@@ -1,0 +1,114 @@
+/* Navbar Container */
+.navbar {
+  background-color: #01050B;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px); /* Adds a smooth glass-like effect */
+}
+
+/* Logo Styling */
+.nav-logo h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  letter-spacing: 1px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-logo h1:hover {
+  color: #12d9f3; /* Highlight the logo on hover */
+  transform: scale(1.1) rotate(-3deg); /* Subtle rotation and scale on hover */
+}
+
+/* Navigation Links Styling */
+.nav-links a {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+  margin: 0 15px;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Underline effect with gradient */
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, #12bff3, #04001d); /* Gradient underline */
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.4s ease;
+}
+
+.nav-links a:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.nav-links a:hover {
+  color: #129df3; /* Highlight text color on hover */
+  transform: translateY(-3px); /* Move link slightly up on hover */
+}
+
+/* Subtle shake animation when hover */
+.nav-links a:hover {
+  animation: shake 0.2s ease-in-out 1;
+}
+
+/* Shake effect */
+@keyframes shake {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(2px, -2px);
+  }
+  40% {
+    transform: translate(-2px, 2px);
+  }
+  60% {
+    transform: translate(2px, -2px);
+  }
+  80% {
+    transform: translate(-2px, 2px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+
+  .nav-logo h1 {
+    font-size: 1.8rem;
+  }
+
+  .nav-links {
+    margin-top: 15px;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+    margin: 10px 0;
+  }
+}
